@@ -330,3 +330,250 @@ The ```<label>``` element is useful for screen-reader users, because the screen-
 The ```<label>``` element also helps users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) - because when the user clicks the text within the ```<label>``` element, it toggles the radio button/checkbox.
 
 The for attribute of the ```<label>``` tag should be equal to the id attribute of the ```<input>``` element to bind them together.
+
+## HTML class Attribute
+
+The HTML class attribute is used to specify a class for an HTML element.
+
+Multiple HTML elements can share the same class.
+The class name is case sensitive!
+
+## HTML id Attribute
+
+The HTML id attribute is used to specify a unique id for an HTML element.
+
+You cannot have more than one element with the same id in an HTML document.
+
+The id name is case sensitive!
+
+Note: The id name must contain at least one character, cannot start with a number, and must not contain whitespaces (spaces, tabs, etc.).
+
+## Difference Between Class and ID
+
+A class name can be used by multiple HTML elements, while an id name must only be used by one HTML element within the page.
+
+## HTML File Paths
+
+A file path describes the location of a file in a web site's folder structure.
+
+### File Path Examples
+
+```<img src="picture.jpg">```: The "picture.jpg" file is located in the same folder as the current page.
+
+```<img src="images/picture.jpg">```: The "picture.jpg" file is located in the images folder in the current folder.
+
+```<img src="/images/picture.jpg">```: The "picture.jpg" file is located in the images folder at the root of the current web.
+
+```<img src="../picture.jpg">```: The "picture.jpg" file is located in the folder one level up from the current folder.
+
+### Absolute File Paths
+
+An absolute file path is the full URL to a file:
+
+```<img src="https://www.w3schools.com/images/picture.jpg" alt="Mountain">```
+
+### Relative File Paths
+
+A relative file path points to a file relative to the current page.
+
+In the following example, the file path points to a file in the images folder located at the root of the current web:
+
+```<img src="/images/picture.jpg" alt="Mountain">```
+
+## HTML - The Head Element
+
+The HTML ```<head>``` element is a container for the following elements: ```<title>```, ```<style>```, ```<meta>```, ```<link>```, ```<script>```, and ```<base>```.
+
+## The HTML \<head\> Element
+
+The ```<head>``` element is a container for metadata (data about data) and is placed between the ```<html>``` tag and the ```<body>``` tag.
+
+HTML metadata is data about the HTML document. Metadata is not displayed.
+
+Metadata typically define the document title, character set, styles, scripts, and other meta information.
+
+## The HTML \<meta\> Element
+
+The ```<meta>``` element is typically used to specify the character set, page description, keywords, author of the document, and viewport settings.
+
+The metadata will not be displayed on the page, but is used by browsers (how to display content or reload page), by search engines (keywords), and other web services.
+
+### Examples
+
+- Define the character set used:
+
+  ```<meta charset="UTF-8">```
+
+- Define keywords for search engines:
+
+  ```<meta name="keywords" content="HTML, CSS, JavaScript">```
+
+- Define a description of your web page:
+
+  ```<meta name="description" content="Free Web tutorials">```
+
+- Define the author of a page:
+
+  ```<meta name="author" content="John Doe">```
+
+- Refresh document every 30 seconds:
+
+  ```<meta http-equiv="refresh" content="30">```
+
+- Setting the viewport to make your website look good on all devices:
+
+  ```<meta name="viewport" content="width=device-width, initial-scale=1.0">```
+
+### Setting The Viewport
+
+The viewport is the user's visible area of a web page. It varies with the device - it will be smaller on a mobile phone than on a computer screen.
+
+You should include the following ```<meta>``` element in all your web pages:
+
+```<meta name="viewport" content="width=device-width, initial-scale=1.0">```
+
+This gives the browser instructions on how to control the page's dimensions and scaling.
+
+The ```width=device-width``` part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+
+The ```initial-scale=1.0``` part sets the initial zoom level when the page is first loaded by the browser.
+
+- The ```<head>``` element is a container for metadata (data about data)
+
+- The ```<head>``` element is placed between the ```<html>``` tag and the ```<body>``` tag
+
+- The ```<title>``` element is required and it defines the title of the document
+
+- The ```<style>``` element is used to define style information for a single document
+
+- The ```<link>``` tag is most often used to link to external style sheets
+
+- The ```<meta>``` element is typically used to specify the character set, page description, keywords, author of the document, and viewport settings
+
+- The ```<script>``` element is used to define client-side JavaScripts
+
+- The ```<base>``` element specifies the base URL and/or target for all relative URLs in a page.
+
+## Responsive Images
+
+Responsive images are images that scale nicely to fit any browser size.
+
+### Using the width Property
+
+If the CSS width property is set to 100%, the image will be responsive and scale up and down.
+
+```<img src="img_girl.jpg" style="width:100%;">```
+
+Notice that in the example above, the image can be scaled up to be larger than its original size. A better solution, in many cases, will be to use the max-width property instead.
+
+### Using the max-width Property
+
+If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size:
+
+```<img src="img_girl.jpg" style="max-width:100%;height:auto;">```
+
+## Show Different Images Depending on Browser Width
+
+The HTML ```<picture>``` element allows you to define different images for different browser window sizes.
+
+```_
+<picture>
+  <source srcset="img_smallflower.jpg" media="(max-width: 600px)">
+  <source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+  <source srcset="flowers.jpg">
+  <img src="img_smallflower.jpg" alt="Flowers">
+</picture>
+```
+
+## Responsive Text Size
+
+The text size can be set with a ```"vw"``` unit, which means the ```"viewport width"```.
+
+```<h1 style="font-size:10vw">Hello World</h1>```
+
+Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
+
+## Media Queries
+
+In addition to resize text and images, it is also common to use media queries in responsive web pages.
+
+With media queries you can define completely different styles for different browser sizes.
+
+```_
+<style>
+.left, .right {
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+.main {
+  float: left;
+  width: 60%; /* The width is 60%, by default */
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+</style>
+```
+
+## HTML Entities
+
+Reserved characters in HTML must be replaced with entities:
+
+```_
+< (less than) = &lt;
+> (greather than) = &gt;
+```
+
+### HTML Character Entities
+
+Some characters are reserved in HTML.
+
+If you use the less than ```(<)``or greater than```(>)```signs in your HTML text, the browser might mix them with tags.
+
+Entity names or entity numbers can be used to display reserved HTML characters.
+
+- Entity names look like this:
+
+  ```&entity_name;```
+
+- Entity numbers look like this:
+
+  ```&#entity_number;```
+
+To display a less than sign ```(<)``` we must write: ```&lt;``` or ```&#60;```
+
+Entity names are easier to remember than entity numbers.
+
+## Some Useful HTML Character Entities
+
+```_
+  non-breaking space       &nbsp;    &#160;
+< less than                &lt;      &#60;
+> greater than             &gt;      &#62;
+& ampersand                &amp;     &#38;
+" double quotation mark    &quot;    &#34;
+' single quotation mark    &apos;    &#39;
+¢ cent                     &cent;    &#162;
+£ pound                    &pound;   &#163;
+¥ yen                      &yen;     &#165;
+€ euro                     &euro;    &#8364;
+© copyright                &copy;    &#169;
+® trademark                &reg;     &#174;
+```
+
+### Non-breaking Space
+
+A commonly used HTML entity is the non-breaking space: ```&nbsp;```
+
+A non-breaking space is a space that will not break into a new line.
+
+Two words separated by a non-breaking space will stick together (not break into a new line). This is handy when breaking the words might be disruptive.
+
+Another common use of the non-breaking space is to prevent browsers from truncating spaces in HTML pages.
+
+If you write 10 spaces in your text, the browser will remove 9 of them. To add real spaces to your text, you can use the &nbsp; character entity.
